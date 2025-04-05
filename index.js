@@ -28,14 +28,7 @@ mongoose
 app.use("/", require("./routes/auth.js"));
 app.use("/chat", require("./routes/chat.js"));
 
-// Serve static assets in production
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../../app/build")));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../../app/build", "index.html"));
-  });
-}
 
 // require("dotenv").config();
 // const express = require("express");
